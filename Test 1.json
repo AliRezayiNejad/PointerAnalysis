@@ -1,0 +1,11 @@
+[
+    { "type": "new", "lhs": "x", "rhs": "o1"},
+    { "type": "new", "lhs": "y", "rhs": "o2"},
+    { "type": "new", "lhs": "z", "rhs": "o3"},	
+    { "type": "assign", "lhs": "g", "rhs": "x"},
+    { "type": "assign", "lhs": "h", "rhs": "y"},
+    { "type": "fieldwrite", "lhs": "z.s", "rhs": "h"},
+    { "type": "fieldwrite", "lhs": "x.f", "rhs": "z"},
+    { "type": "fieldread", "lhs": "p", "rhs": "x.f"},
+    { "type": "fieldread", "lhs": "q", "rhs": "z.s"}
+]
