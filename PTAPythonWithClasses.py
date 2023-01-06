@@ -51,7 +51,7 @@ for i in range(len(userInput)): #iterating through each statement in the input f
         for letter in userInput[i]["rhs"]: #going through each letter
             for h in range(len(variables)): #and comparing it with variables we already have.
                 if letter == variables[h].name:
-                    v.pointsTo = userInput[i]["rhs"].replace(letter, variables[h].pointsTo) #evaluating to find its true nature!
+                    v.pointsTo = userInput[i]["rhs"].replace(letter, variables[h].pointsTo) #evaluating to reveal its true nature!
             for g in range(len(variables)):
                 if variables[g].name == v.pointsTo: #finding the correct abstract object we should eventually arrive at.
                     v.pointsTo = variables[g].pointsTo
