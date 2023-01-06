@@ -60,4 +60,5 @@ for i in range(len(userInput)): #iterating through each statement in the input f
     else:
         print("Operation type must be one of the following: new, assign, fieldwrite, fieldread.") #Just in case. scenario 5 out of 4 :)
 
+print()
 print(variables)
