@@ -1,0 +1,9 @@
+[
+    { "type": "new", "lhs": "x", "rhs": "o1"},
+    { "type": "new", "lhs": "z", "rhs": "o2"},
+    { "type": "assign", "lhs": "y", "rhs": "x"},
+    { "type": "fieldwrite", "lhs": "x.f", "rhs": "z"},
+    { "type": "fieldread", "lhs": "p", "rhs": "x.f"},
+    { "type": "fieldread", "lhs": "q", "rhs": "z.g"},
+    { "type": "fieldwrite", "lhs": "z.g", "rhs": "y"}
+]

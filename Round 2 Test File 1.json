@@ -1,0 +1,5 @@
+[
+    { "type": "assign", "lhs": "z", "rhs": "y"},
+	{ "type": "assign", "lhs": "y", "rhs": "x"},
+    { "type": "new", "lhs": "x", "rhs": "B"}
+]
