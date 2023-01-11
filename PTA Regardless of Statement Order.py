@@ -19,13 +19,20 @@ for i in range(len(userInput)):
         v = variable(userInput[i]["lhs"])
         v.pointsTo = userInput[i]["rhs"]
         variables.append(v)
+        for h in range(len(variables)): #new
+            if variables[h].pointsTo == userInput[i]["lhs"]: #new
+                variables[h].pointsTo = userInput[i]["rhs"] #new
 
     elif userInput[i]["type"]=="assign":
         v = variable(userInput[i]["lhs"])
+        v.pointsTo = userInput[i]["rhs"] #new
         for h in range(len(variables)):
             if variables[h].name == userInput[i]["rhs"]:
                 v.pointsTo = variables[h].pointsTo
         variables.append(v)
+        for h in range(len(variables)): #new
+            if variables[h].pointsTo == userInput[i]["lhs"]: #new
+                variables[h].pointsTo = userInput[i]["rhs"] #new
 
     elif userInput[i]["type"]=="fieldwrite":
         v = variable(userInput[i]["lhs"])
@@ -36,6 +43,9 @@ for i in range(len(userInput)):
                 if variables[h].name == userInput[i]["rhs"]:
                     v.pointsTo = variables[h].pointsTo
         variables.append(v)
+        for h in range(len(variables)): #new
+            if variables[h].pointsTo == v.name: #new
+                variables[h].pointsTo = v.pointsTo #new
 
     elif userInput[i]["type"]=="fieldread":
         v = variable(userInput[i]["lhs"])
@@ -47,6 +57,9 @@ for i in range(len(userInput)):
             for g in range(len(variables)):
                 if variables[g].name == v.pointsTo:
                     v.pointsTo = variables[g].pointsTo
+            for statement in userInput: #new
+                if statement["lhs"] == userInput[i]["rhs"]: #new
+                    statement["lhs"].replace(letter, variables[h].pointsTo) #new
         variables.append(v)
 
     else:
